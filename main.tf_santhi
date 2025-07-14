@@ -49,7 +49,7 @@ resource "terraform_data" "main" {
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/${var.component}.sh",
-      #"sed -i 's/\r$//' /tmp/${var.component}.sh",
+      "sed -i 's/\r$//' /tmp/${var.component}.sh",
       "sudo sh /tmp/${var.component}.sh ${var.component} ${var.environment}"
     ]
   }
